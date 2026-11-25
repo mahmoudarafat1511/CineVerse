@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - CineVerse</title>
+
+    <link rel="stylesheet" href="css/admin.css?v=7">
+    <link rel="stylesheet" href="css/field-validation.css">
+</head>
+
+<body class="admin-dashboard-page" hidden>
+
+    <!-- Sidebar -->
+
+    <div class="admin-sidebar">
+
+        <div class="sidebar-logo">
+            <h2><a href="index.html">Cine<span>Verse</span></a></h2>
+            <p>ADMIN PANEL</p>
+        </div>
+
+        <nav class="sidebar-links" aria-label="Admin navigation">
+
+            <button class="sidebar-link active" id="dashboardButton">
+                Dashboard
+            </button>
+
+            <button class="sidebar-link" id="moviesButton">
+                Manage Movies
+            </button>
+
+            <button class="sidebar-link" id="bookingsButton">
+                Manage Bookings
+            </button>
+
+            <button class="sidebar-link" id="accountsButton">
+                Manage Accounts
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button id="logoutButton" class="logout-button">
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Main Content -->
+
+    <div class="admin-main">
+
+        <!-- Top Bar -->
+
+        <div class="admin-topbar">
+
+            <div>
+                <h1 id="pageTitle">Dashboard</h1>
+                <p>Welcome back, Admin!</p>
+            </div>
+
+            <div class="admin-profile">
+                <span class="profile-circle">A</span>
+                <span>Administrator</span>
+            </div>
+
+        </div>
+
+
+        <!-- Dashboard Section -->
+
+        <div id="dashboardSection" class="admin-section">
+
+            <h2>Overview</h2>
+
+            <div class="stats-container">
+
+                <div class="stat-card">
+                    <p>Total Movies</p>
+                    <h2 id="totalMovies">0</h2>
+                    <span>Movies in CineVerse</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Total Bookings</p>
+                    <h2 id="totalBookings">0</h2>
+                    <span>Confirmed reservations</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Booking Value</p>
+                    <h2 id="totalRevenue">0 EGP</h2>
+                    <span>Payable at the cinema</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Tickets Booked</p>
+                    <h2 id="ticketsSold">0</h2>
+                    <span>Total selected seats</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Today's Bookings</p>
+                    <h2 id="todayBookings">0</h2>
+                    <span>Confirmed today</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Cancelled Bookings</p>
+                    <h2 id="cancelledBookings">0</h2>
+                    <span>Kept in booking history</span>
+                </div>
+
+            </div>
+
+
+            <!-- Recent Bookings -->
+
+            <div class="admin-panel">
+
+                <h2>Recent Bookings</h2>
+
+                <div class="table-container">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Reference</th>
+                                <th>Customer</th>
+                                <th>Movie</th>
+                                <th>Seats</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="recentBookingsTable">
+                            <tr>
+                                <td colspan="6">No bookings yet.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Manage Movies Section -->
+
+        <div id="moviesSection" class="admin-section" style="display: none;">
+
+            <div class="section-header">
+                <h2>Manage Movies</h2>
+
+                <button id="addMovieButton" class="admin-red-button">
+                    + Add Movie
+                </button>
+            </div>
+
+
+            <!-- Movie Form -->
+
+            <div id="movieFormContainer" class="admin-panel" style="display: none;">
+
+                <h2 id="movieFormTitle">Add Movie</h2>
+
+                <form id="movieForm" novalidate>
+
+                    <input type="hidden" id="editMovieId">
+
+                    <div class="movie-form-grid">
+                        <div class="movie-form-field">
+                            <label for="movieTitle">Movie Title</label>
+                            <input type="text" id="movieTitle" maxlength="100" placeholder="Enter movie title" aria-describedby="movieTitleError">
+                            <p id="movieTitleError" class="field-error" role="alert"></p>
+                        </div>
+
+                        <div class="movie-form-field">
+                            <label for="movieGenre">Genre</label>
+                            <input type="text" id="movieGenre" maxlength="100" placeholder="Action, Drama, Horror..." aria-describedby="movieGenreError">
+                            <p id="movieGenreError" class="field-error" role="alert"></p>
+                        </div>
+
+                        <div class="movie-form-field">
+                            <label for="movieDuration">Duration (minutes)</label>
+                            <input type="number" id="movieDuration" min="1" max="600" placeholder="120" aria-describedby="movieDurationError">
+                            <p id="movieDurationError" class="field-error" role="alert"></p>
+                        </div>
+
+                        <div class="movie-form-field">
+                            <label for="movieRating">Age Rating</label>
+                            <select id="movieRating">
+                                <option value="">Not rated</option>
+                                <option value="G">G</option>
+                                <option value="PG">PG</option>
+                                <option value="PG-13">PG-13</option>
+                                <option value="R">R</option>
+                            </select>
+                        </div>
+
+                        <div class="movie-form-field">
+                            <label for="moviePoster">Poster Image</label>
+                            <input type="file" id="moviePoster" accept="image/jpeg,image/png,image/webp,image/gif,image/avif" aria-describedby="moviePosterHint moviePosterError">
+                            <p id="moviePosterError" class="field-error" role="alert"></p>
+                            <p id="moviePosterHint" class="poster-upload-hint">JPG, PNG, WebP, GIF, or AVIF up to 1 MB.</p>
+                            <button type="button" id="clearMoviePoster" class="admin-gray-button" hidden>Clear Selection</button>
+                            <img id="moviePosterPreview" class="movie-poster-preview" alt="Poster preview" hidden>
+                        </div>
+
+                        <div class="movie-form-field">
+                            <label for="movieDescription">Description</label>
+                            <input type="text" id="movieDescription" maxlength="400" placeholder="Enter a short description">
+                        </div>
+
+                        <div class="movie-form-field">
+                            <label for="movieStatus">Movie Status</label>
+                            <select id="movieStatus">
+                                <option value="Now Showing">Now Showing</option>
+                                <option value="Coming Soon">Coming Soon</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <p id="movieFormError" class="admin-error" role="alert"></p>
+
+                    <div class="form-buttons">
+                        <button type="submit" id="movieSubmitButton" class="admin-red-button">
+                            Add Movie
+                        </button>
+
+                        <button type="button" id="cancelMovieButton" class="admin-gray-button">
+                            Cancel
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- Movies Table -->
+
+            <div class="admin-panel">
+
+                <h2>Movie List</h2>
+                <p id="movieListError" class="admin-error" role="alert"></p>
+
+                <div class="table-container">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Poster</th>
+                                <th>Title</th>
+                                <th>Genre</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="adminMoviesTable">
+                            <tr>
+                                <td colspan="5">Loading movies...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Manage Bookings Section -->
+
+        <div id="bookingsSection" class="admin-section" style="display: none;">
+
+            <h2>Manage Bookings</h2>
+
+            <div class="admin-panel">
+                <div class="admin-booking-filters" role="search" aria-label="Filter bookings">
+                    <label>Reference or customer
+                        <input id="adminBookingSearch" type="search" placeholder="Search bookings">
+                    </label>
+                    <label>Movie
+                        <select id="adminBookingMovie"><option value="">All movies</option></select>
+                    </label>
+                    <label>Customer account
+                        <select id="adminBookingCustomer"><option value="">All customers</option></select>
+                    </label>
+                    <label>Cinema
+                        <select id="adminBookingCinema"><option value="">All cinemas</option></select>
+                    </label>
+                    <label>Status
+                        <select id="adminBookingStatus">
+                            <option value="">All statuses</option>
+                            <option value="confirmed">Confirmed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </label>
+                </div>
+                <p id="adminBookingStatusMessage" role="status"></p>
+                <p id="adminBookingError" class="admin-error" role="alert"></p>
+
+                <div class="table-container">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Reference</th>
+                                <th>Customer</th>
+                                <th>Movie</th>
+                                <th>Cinema</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Seats</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="adminBookingsTable">
+                            <tr>
+                                <td colspan="10">No bookings yet.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="accountsSection" class="admin-section" style="display: none;">
+            <div class="admin-panel">
+                <h2>Customer Accounts</h2>
+                <div class="admin-booking-filters admin-account-search">
+                    <label>Search customers
+                        <input id="adminAccountSearch" type="search" placeholder="Name or email">
+                    </label>
+                </div>
+                <p id="adminAccountStatus" role="status"></p>
+                <p id="adminAccountError" class="admin-error" role="alert"></p>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th>Bookings</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminAccountsTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <dialog id="adminBookingDetails" class="booking-dialog" aria-labelledby="adminBookingDetailsTitle">
+        <h2 id="adminBookingDetailsTitle">Booking Details</h2>
+        <dl id="adminBookingDetailsList"></dl>
+        <form method="dialog"><button class="admin-gray-button">Close</button></form>
+    </dialog>
+
+    <script src="js/catalog.js?v=4"></script>
+    <script src="js/booking-records.js?v=8"></script>
+    <script src="js/account.js?v=13"></script>
+    <script src="js/field-validation.js?v=3"></script>
+    <script src="js/admin.js?v=9"></script>
+
+</body>
+</html>
