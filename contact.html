@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CineVerse | Contact Us</title>
+
+    <link rel="stylesheet" href="css/style.css?v=7">
+    <link rel="stylesheet" href="css/responsive.css?v=3">
+
+    <script src="js/account.js?v=13" defer></script>
+    <link rel="stylesheet" href="css/cinema.css?v=9">
+    <link rel="stylesheet" href="css/field-validation.css">
+</head>
+
+<body class="cinema-site">
+
+    <header class="navbar cinema-nav">
+        <a class="logo cinema-logo" href="index.html">Cine<span>Verse</span></a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="movies.html">Movies</a>
+            <a href="showtimes.html">Showtimes</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="cinema-nav-actions">
+            <a class="nav-account" href="account.html" data-account-link>Log In</a>
+            <a class="nav-button" href="booking.html">Book Tickets</a>
+        </div>
+    </header>
+
+    <!-- Contact Page -->
+    <div class="contact-section">
+
+        <h1>Contact Us</h1>
+
+        <p class="contact-description">
+            Have a question or need assistance?
+            Send us a message and our team will be happy to help.
+        </p>
+
+
+        <div class="contact-container">
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+
+                <h2>Send Us a Message</h2>
+
+                <form id="contactForm" novalidate>
+
+                    <label for="contactName">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="contactName"
+                        aria-describedby="contactNameError"
+                        autocomplete="name" required maxlength="80"
+                        placeholder="Enter your full name">
+                    <p id="contactNameError" class="field-error" role="alert"></p>
+
+
+                    <label for="contactEmail">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="contactEmail"
+                        aria-describedby="contactEmailError"
+                        autocomplete="email" required maxlength="254"
+                        placeholder="Enter your email address">
+                    <p id="contactEmailError" class="field-error" role="alert"></p>
+
+
+                    <label for="contactSubject">Subject</label>
+
+                    <select id="contactSubject" aria-describedby="contactSubjectError" required>
+
+                        <option value="">Select a subject</option>
+                        <option value="booking">Booking Inquiry</option>
+                        <option value="tickets">Ticket Information</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="other">Other</option>
+
+                    </select>
+                    <p id="contactSubjectError" class="field-error" role="alert"></p>
+
+
+                    <label for="contactMessage">Your Message</label>
+
+                    <textarea
+                        id="contactMessage"
+                        aria-describedby="contactMessageError"
+                        required maxlength="2000"
+                        rows="6"
+                        placeholder="Write your message here..."></textarea>
+                    <p id="contactMessageError" class="field-error" role="alert"></p>
+
+
+                    <button
+                        type="submit"
+                        class="main-button contact-button">
+
+                        Send Message
+
+                    </button>
+
+                    <p id="contactSuccess" role="status"></p>
+
+                </form>
+
+            </div>
+
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+
+                <h2>Get in Touch</h2>
+
+                <p>
+                    We're here to help make your cinema
+                    experience as enjoyable as possible.
+                </p>
+
+
+                <div class="contact-detail">
+
+                    <h3>📍 Our Cinemas</h3>
+
+                    <p>City Stars — Cairo</p>
+                    <p>Mall of Egypt — 6th of October</p>
+                    <p>Cairo Festival City — New Cairo</p>
+
+                </div>
+
+
+                <div class="contact-detail">
+
+                    <h3>✉ Email Support</h3>
+
+                    <p>support@cineverse.com</p>
+
+                </div>
+
+
+                <div class="contact-detail">
+
+                    <h3>🕒 Support Hours</h3>
+
+                    <p>Saturday – Thursday</p>
+                    <p>10:00 AM – 10:00 PM</p>
+
+                </div>
+
+
+                <div class="contact-help">
+
+                    <h3>Looking for Movie Tickets?</h3>
+
+                    <p>
+                        Explore our latest movies and
+                        available showtimes.
+                    </p>
+
+                    <a href="showtimes.html" class="movie-button">
+                        View Showtimes
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer class="footer cinema-footer">
+        <div class="cinema-footer-inner">
+            <div class="footer-brand">
+                <a class="logo cinema-logo" href="index.html">Cine<span>Verse</span></a>
+                <p>Find movies, choose a showtime, and book your seats.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="movies.html">Movies</a>
+                <a href="showtimes.html">Showtimes</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-account">
+                <a href="account.html">My Account</a>
+                <a href="booking.html">Book Tickets</a>
+            </div>
+        </div>
+        <p class="cinema-copyright">© 2026 CineVerse. All rights reserved.</p>
+    </footer>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/field-validation.js?v=3"></script>
+    <script src="js/validation.js?v=5"></script>
+
+</body>
+
+</html>
