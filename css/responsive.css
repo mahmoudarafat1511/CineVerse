@@ -1,0 +1,468 @@
+
+/* CineVerse Responsive Design */
+
+
+/* Tablet Screens */
+
+@media screen and (max-width: 1024px) {
+
+    /* Navigation */
+
+    .navbar {
+        padding: 15px 4%;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        margin: 0 8px;
+        font-size: 14px;
+    }
+
+    /* Hero */
+
+    .hero {
+        padding: 90px 6%;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    /* Movie Cards */
+
+    .movie-container {
+        flex-wrap: wrap;
+    }
+
+    .movie-card {
+        width: calc(50% - 13px);
+        box-sizing: border-box;
+    }
+
+    /* Featured Movie */
+
+    .featured-container {
+        gap: 30px;
+    }
+
+    .featured-info h2 {
+        font-size: 30px;
+    }
+
+    /* Homepage Showtimes */
+
+    .showtimes-container {
+        flex-wrap: wrap;
+    }
+
+    .showtime-card {
+        width: calc(50% - 13px);
+        box-sizing: border-box;
+    }
+
+    /* Features */
+
+    .features-container {
+        flex-wrap: wrap;
+    }
+
+    .feature-card {
+        width: calc(50% - 13px);
+        box-sizing: border-box;
+    }
+
+    /* Checkout and Contact */
+
+    .checkout-summary,
+    .contact-info {
+        width: 40%;
+    }
+
+    /* Booking Seats */
+
+    .seat {
+        width: 43px;
+        height: 42px;
+    }
+
+}
+
+
+/* Mobile Screens */
+
+@media screen and (max-width: 768px) {
+
+    /* General */
+
+    body {
+        background-attachment: scroll;
+    }
+
+    /* Navigation */
+
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px 4%;
+    }
+
+    .logo {
+        margin: 0;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .nav-links a {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .nav-button {
+        padding: 10px 20px;
+    }
+
+    /* Hero */
+
+    .hero {
+        padding: 65px 6%;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .second-button {
+        margin-left: 5px;
+    }
+
+    /* Sections */
+
+    .movies-section,
+    .featured-section,
+    .showtimes-section,
+    .features-section,
+    .details-section,
+    .showtimes-page,
+    .booking-section,
+    .checkout-section,
+    .contact-section {
+        padding: 30px 5%;
+    }
+
+    /* Section Headings */
+
+    .section-heading {
+        gap: 15px;
+    }
+
+    .section-heading h2 {
+        font-size: 22px;
+    }
+
+    /* Movie Cards */
+
+    .movie-container {
+        gap: 12px;
+    }
+
+    .movie-card {
+        width: calc(50% - 6px);
+    }
+
+    /* Featured Movie */
+
+    .featured-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .featured-container img {
+        width: 220px;
+        height: 310px;
+    }
+
+    .featured-info h2 {
+        font-size: 28px;
+    }
+
+    .featured-info p {
+        font-size: 15px;
+    }
+
+    /* Homepage Showtimes */
+
+    .showtimes-container {
+        flex-direction: column;
+    }
+
+    .showtime-card {
+        width: 100%;
+    }
+
+    .showtime-times {
+        flex-wrap: wrap;
+    }
+
+    /* Features */
+
+    .features-container {
+        flex-direction: column;
+    }
+
+    .feature-card {
+        width: 100%;
+    }
+
+    /* Search and Genre Filter */
+
+    .search-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-container input,
+    .search-container select {
+        width: 100%;
+    }
+
+    /* Movie Details */
+
+    .details-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .details-container img {
+        width: 230px;
+        height: 330px;
+    }
+
+    .details-info h2 {
+        font-size: 28px;
+    }
+
+    /* Showtimes Filter */
+
+    .showtimes-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .showtimes-filter select,
+    .showtimes-filter input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Schedule Cards */
+
+    .schedule-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .schedule-card img {
+        width: 160px;
+        height: 220px;
+    }
+
+    .schedule-times {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Booking Information */
+
+    .booking-info,
+    .seat-section,
+    .booking-summary {
+        padding: 20px;
+    }
+
+    /* Cinema Screen */
+
+    .cinema-screen {
+        width: 85%;
+        box-sizing: border-box;
+        letter-spacing: 2px;
+    }
+
+    /* Seat Selection */
+
+    .seat-row {
+        gap: 5px;
+    }
+
+    .seat-row span {
+        width: 15px;
+        font-size: 12px;
+    }
+
+    .seat {
+        width: 35px;
+        height: 35px;
+        font-size: 11px;
+    }
+
+    .seat-legend {
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 12px;
+    }
+
+    /* Checkout Page */
+
+    .checkout-container {
+        flex-direction: column;
+    }
+
+    .customer-info,
+    .checkout-summary {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Confirmation Page */
+
+    .confirmation-section {
+        padding: 35px 5%;
+    }
+
+    .confirmation-heading h1 {
+        font-size: 28px;
+    }
+
+    .ticket-card {
+        padding: 22px;
+    }
+
+    .confirmation-actions {
+        flex-wrap: wrap;
+    }
+
+    /* Contact Page */
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-form,
+    .contact-info {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Footer */
+
+    .footer {
+        padding: 30px 5%;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .footer-links a {
+        margin: 0;
+    }
+
+}
+
+
+/* Small Mobile Screens */
+
+@media screen and (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 27px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .movie-card img {
+        height: auto;
+    }
+
+    .section-heading h2 {
+        font-size: 20px;
+    }
+
+    .showtime-times span,
+    .schedule-times button {
+        font-size: 12px;
+    }
+
+    .seat-row {
+        gap: 3px;
+    }
+
+    .seat {
+        width: 29px;
+        height: 32px;
+        font-size: 10px;
+    }
+
+    .seat-row span {
+        width: 12px;
+    }
+
+    .customer-info,
+    .checkout-summary,
+    .contact-form,
+    .contact-info {
+        padding: 20px;
+    }
+
+    .ticket-card {
+        padding: 18px;
+    }
+
+    .summary-row {
+        gap: 10px;
+    }
+
+    .summary-row span,
+    .summary-row strong {
+        font-size: 12px;
+    }
+
+}
+
+
+/* Keep Printed Tickets Clean */
+
+@media print {
+
+    .navbar,
+    .footer,
+    .confirmation-actions {
+        display: none !important;
+    }
+
+}

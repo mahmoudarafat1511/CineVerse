@@ -1,0 +1,885 @@
+/* CineVerse layout and presentation */
+
+@media screen {
+    .cinema-site {
+        min-height: 100vh;
+        background-color: #090e18;
+        background-image: linear-gradient(rgba(9, 14, 24, 0.80), rgba(9, 14, 24, 0.80)), url("../images/banner.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: #f2f5fb;
+        font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    /* Navigation and footer */
+
+    .cinema-site .cinema-nav {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        padding: 16px 6%;
+        gap: 20px;
+        background: #0d1422;
+        border-bottom: 1px solid #28344a;
+    }
+
+    .cinema-site .cinema-logo {
+        color: #f2f5fb;
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    .cinema-logo span {
+        color: #ff4855;
+    }
+
+    .cinema-nav .nav-links,
+    .cinema-nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .cinema-nav-actions {
+        justify-content: flex-end;
+    }
+
+    .cinema-nav .nav-links a,
+    .cinema-nav .nav-account {
+        margin: 0;
+        padding: 8px 5px;
+        color: #bac6d9;
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+    .cinema-nav .nav-links a:hover,
+    .cinema-nav .nav-links a[aria-current="page"],
+    .cinema-nav .nav-account:hover {
+        color: #fff;
+    }
+
+    .cinema-nav .nav-profile {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 4px;
+        font-weight: bold;
+    }
+
+    .nav-profile-avatar {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 27px;
+        height: 27px;
+        border: 1px solid #804454;
+        border-radius: 50%;
+        background: #392439;
+        color: #ffabb5;
+    }
+
+    .nav-profile-name {
+        max-width: 10rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .cinema-nav .nav-links a[aria-current="page"] {
+        border-bottom: 2px solid #ff4855;
+        text-decoration: none;
+    }
+
+    .cinema-nav .nav-button,
+    .cinema-site .main-button,
+    .cinema-site .movie-button {
+        background-color: #cb1329;
+        font-weight: bold;
+    }
+
+    .cinema-nav .nav-button {
+        padding: 8px 12px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .cinema-nav .nav-button:hover,
+    .cinema-site .main-button:hover,
+    .cinema-site .movie-button:hover {
+        background-color: #a80f21;
+    }
+
+    .cinema-site .second-button {
+        border-color: #586987;
+        color: #ecf2ff;
+    }
+
+    .cinema-site .second-button:hover {
+        background-color: #27364e;
+    }
+
+    .cinema-site .cinema-footer {
+        padding: 36px 6% 18px;
+        background: #0d1422;
+        border-top: 1px solid #28344a;
+        text-align: left;
+    }
+
+    .cinema-footer-inner {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 24px;
+        max-width: 1240px;
+        margin: 0 auto;
+    }
+
+    .cinema-footer .footer-links,
+    .cinema-footer .footer-account {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        gap: 10px;
+    }
+
+    .cinema-footer .footer-links a,
+    .cinema-footer .footer-account a {
+        color: #c3cfe2;
+        margin: 0;
+    }
+
+    .cinema-footer a:hover {
+        color: #ff939d;
+    }
+
+    .cinema-footer .cinema-copyright {
+        max-width: 1240px;
+        margin: 25px auto 0;
+        padding-top: 15px;
+        border-top: 1px solid #28344a;
+        font-size: 13px;
+    }
+
+    /* Home and movie catalog */
+
+    .cinema-site.cinema-home {
+        background-image: linear-gradient(to right, rgba(9, 14, 24, 0.97), rgba(9, 14, 24, 0.78), rgba(9, 14, 24, 0.28)), url("../images/banner.jpg");
+    }
+
+    .cinema-home .hero {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        min-height: 480px;
+        padding: 65px 6%;
+        background: transparent;
+        border-bottom: 1px solid #34435f;
+        text-align: left;
+    }
+
+    .cinema-home .hero h1 {
+        font-size: 4.5vw;
+        line-height: 1.08;
+        margin: 0 0 20px;
+    }
+
+    .cinema-home .hero h1 span {
+        display: block;
+        color: #ff818e;
+    }
+
+    .cinema-home .hero-description {
+        max-width: 385px;
+        margin-bottom: 24px;
+        color: #d4dfef;
+    }
+
+    .cinema-home .hero-actions {
+        justify-content: flex-start;
+    }
+
+    .cinema-site .movies-section,
+    .cinema-site .featured-section,
+    .cinema-site .showtimes-section,
+    .cinema-site .features-section,
+    .cinema-site .details-section,
+    .cinema-site .showtimes-page,
+    .cinema-site .booking-section,
+    .cinema-site .checkout-section,
+    .cinema-site .confirmation-section,
+    .cinema-site .contact-section {
+        width: 88%;
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 36px 0;
+    }
+
+    .cinema-site h1 {
+        font-size: 40px;
+        line-height: 1.15;
+        margin: 0 0 12px;
+    }
+
+    .cinema-site .movies-section h2,
+    .cinema-site .showtimes-section h2,
+    .cinema-site .features-section h2 {
+        font-size: 27px;
+    }
+
+    .cinema-site .section-heading {
+        border-bottom: 1px solid #2c3b56;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+    }
+
+    .cinema-site .movie-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+    }
+
+    .cinema-site .movie-card {
+        width: 100%;
+        min-width: 0;
+        background: #141e30;
+        border-color: #2c3b56;
+    }
+
+    .cinema-site .movie-card img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 2 / 3;
+        object-fit: cover;
+        border-bottom: 3px solid #293a58;
+    }
+
+    .cinema-site .movie-card:hover {
+        background-color: #1a2740;
+        border-color: #ed6274;
+    }
+
+    .cinema-site .movie-info {
+        padding: 16px;
+    }
+
+    .cinema-site .movie-info h3 {
+        line-height: 1.25;
+        font-size: 20px;
+    }
+
+    .cinema-site .movie-card-actions a {
+        display: inline-block;
+        margin: 0;
+    }
+
+    .cinema-site .movie-info p {
+        margin: 4px 0;
+        color: #b8c7dc;
+    }
+
+    .cinema-site .movie-info p:first-of-type {
+        color: #f1a9b2;
+    }
+
+    .cinema-site .featured-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        gap: 32px;
+        padding: 28px;
+        text-align: left;
+    }
+
+    .cinema-site .featured-container img {
+        width: 100%;
+        max-width: 260px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .cinema-site .featured-info h2 {
+        margin: 8px 0 12px;
+        font-size: 38px;
+    }
+
+    .cinema-site .hero-label {
+        color: #ff9ba7;
+    }
+
+    .cinema-site .showtime-card,
+    .cinema-site .feature-card {
+        background-color: #141e30;
+        border: 1px solid #2c3b56;
+        padding: 20px;
+    }
+
+    .cinema-site .showtime-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        text-align: left;
+    }
+
+    .cinema-site .showtime-card h3,
+    .cinema-site .showtime-card p {
+        margin: 0;
+    }
+
+    .cinema-site .showtime-card .home-screening-time {
+        color: #ffabb5;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .cinema-site .showtime-card .movie-button {
+        align-self: stretch;
+        margin-top: auto;
+        text-align: center;
+    }
+
+    .cinema-site .home-screening-cinema {
+        padding-bottom: 6px;
+    }
+
+    .cinema-site .search-container,
+    .cinema-site .showtimes-filter {
+        padding: 14px;
+        background: #141e30;
+        border: 1px solid #34435f;
+        margin-bottom: 10px;
+    }
+
+    .cinema-site .search-container input {
+        width: 48%;
+        max-width: 350px;
+    }
+
+    .cinema-site .search-container select {
+        width: 155px;
+    }
+
+    /* Movie information and showtimes */
+
+    .cinema-site .details-container,
+    .cinema-site .schedule-card {
+        background: #141e30;
+        border-color: #34435f;
+    }
+
+    .cinema-site .details-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 34px;
+        padding: 26px;
+    }
+
+    .cinema-site .details-container img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .cinema-site .details-info h2 {
+        font-size: 36px;
+        margin: 8px 0 16px;
+    }
+
+    .cinema-site .schedule-card {
+        padding: 18px;
+    }
+
+    .cinema-site .schedule-times {
+        flex-wrap: wrap;
+        color: #b8c7dc;
+    }
+
+    .cinema-site .schedule-times a,
+    .cinema-site .schedule-times button {
+        background-color: #101827;
+        border: 1px solid #546886;
+        border-radius: 6px;
+        color: #f3f6ff;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 10px 14px;
+        text-decoration: none;
+    }
+
+    .cinema-site .schedule-times a:hover,
+    .cinema-site .schedule-times a:focus-visible {
+        background-color: #cb1329;
+        border-color: #ff818e;
+    }
+
+    .cinema-site .schedule-card img {
+        width: 112px;
+        height: 168px;
+        align-self: flex-start;
+    }
+
+    .cinema-site .schedule-info {
+        min-width: 0;
+    }
+
+    .cinema-site .schedule-info .second-button,
+    .cinema-site .edit-selection {
+        display: inline-block;
+        margin: 0;
+    }
+
+    /* Forms and reservation layouts */
+
+    .booking-steps {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        list-style: none;
+        margin: 14px 0 20px;
+        padding: 0;
+    }
+
+    .booking-steps li {
+        padding: 7px 12px;
+        border-radius: 6px;
+        border: 1px solid #354764;
+        color: #b8c7dc;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .booking-steps li[aria-current="step"] {
+        background: #432332;
+        border-color: #e63348;
+        color: #fff;
+    }
+
+    .booking-summary-actions {
+        display: grid;
+        gap: 12px;
+    }
+
+    .booking-summary-total {
+        display: grid;
+        gap: 3px;
+        line-height: 1.3;
+        color: #b8c7dc;
+    }
+
+    .booking-total {
+        font-size: 25px;
+        color: #fff;
+    }
+
+    .cinema-site .booking-info,
+    .cinema-site .seat-section,
+    .cinema-site .booking-summary,
+    .cinema-site .customer-info,
+    .cinema-site .checkout-summary,
+    .cinema-site .contact-form,
+    .cinema-site .contact-info {
+        background: #141e30;
+        border-color: #354764;
+        padding: 22px;
+    }
+
+    .cinema-site .booking-layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+        gap: 20px;
+    }
+
+    .booking-workspace {
+        min-width: 0;
+    }
+
+    .screening-fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 16px;
+    }
+
+    .screening-fields div {
+        min-width: 0;
+    }
+
+    .cinema-site .booking-info,
+    .cinema-site .booking-summary {
+        margin-top: 0;
+    }
+
+    .cinema-site .booking-summary,
+    .cinema-site .checkout-summary {
+        position: sticky;
+        top: 20px;
+        border-top: 4px solid #e63348;
+    }
+
+    .cinema-site .booking-summary p {
+        border-bottom: 1px solid #34435f;
+        padding-bottom: 12px;
+    }
+
+    .cinema-site #bookingError {
+        border: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .cinema-site #bookingError:empty {
+        display: none;
+    }
+
+    .cinema-site .checkout-summary .total-row strong {
+        color: #fff;
+        font-size: 25px;
+    }
+
+    .cinema-site .booking-summary button,
+    .cinema-site .customer-info button {
+        width: 100%;
+    }
+
+    .cinema-site .cinema-screen {
+        background: #405579;
+        border-top: 3px solid #a9c6f6;
+        color: #fff;
+        margin: 22px auto 27px;
+        padding: 7px;
+    }
+
+    .cinema-site .seat-row {
+        gap: 8px;
+    }
+
+    .cinema-site .seat-row button:nth-child(4) {
+        margin-right: 12px;
+    }
+
+    .cinema-site .seat {
+        background: #293d60;
+        border: 1px solid #6380aa;
+        border-bottom: 3px solid #8da5c8;
+        font-weight: bold;
+    }
+
+    .cinema-site .seat:hover {
+        background: #415c86;
+    }
+
+    .cinema-site .seat.selected {
+        background: #cb1329;
+        border-color: #fb8693;
+    }
+
+    .cinema-site .seat.occupied {
+        background: #232a38;
+        border-color: #465064;
+        color: #9ca9bd;
+    }
+
+    .cinema-site .available-key { background-color: #293d60; }
+    .cinema-site .selected-key { background-color: #cb1329; }
+    .cinema-site .booked-key { background-color: #232a38; }
+
+    .cinema-site #seatPrompt {
+        padding: 15px;
+        background: #111a2b;
+        border: 1px solid #34435f;
+        color: #c3cfe2;
+    }
+
+    .cinema-site .booking-info input,
+    .cinema-site .booking-info select,
+    .cinema-site .customer-info input,
+    .cinema-site .contact-form input,
+    .cinema-site .contact-form select,
+    .cinema-site .contact-form textarea,
+    .cinema-site .search-container input,
+    .cinema-site .search-container select {
+        background-color: #0d1627;
+        border-color: #536582;
+        color: #f2f5fb;
+    }
+
+    .cinema-site .booking-info input:focus,
+    .cinema-site .booking-info select:focus,
+    .cinema-site .customer-info input:focus,
+    .cinema-site .contact-form input:focus,
+    .cinema-site .contact-form select:focus,
+    .cinema-site .contact-form textarea:focus,
+    .cinema-site .search-container input:focus,
+    .cinema-site .search-container select:focus {
+        outline: 2px solid #f58b98;
+    }
+
+    .cinema-site .checkout-container,
+    .cinema-site .contact-container {
+        gap: 20px;
+    }
+
+    .cinema-site .contact-info {
+        border-top: 4px solid #e63348;
+    }
+
+    .cinema-site .contact-form h2,
+    .cinema-site .contact-info h2 {
+        border-bottom: 1px solid #34435f;
+        padding-bottom: 12px;
+    }
+
+    /* Sign-in, account and ticket */
+
+    .customer-account .account-card input {
+        background: #0d1627;
+        border-color: #536582;
+    }
+
+    .cinema-site.customer-account .account-card {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: start;
+        gap: 22px;
+        width: 88%;
+        max-width: 1180px;
+        background: #101a2b;
+        border-color: #34435f;
+    }
+
+    .customer-account .account-card h1 {
+        grid-column: 1 / -1;
+    }
+
+    .cinema-site.customer-account #accountProfile,
+    .cinema-site.customer-account .booking-history {
+        margin: 0;
+        padding: 20px;
+        background: #141e30;
+        border: 1px solid #34435f;
+        border-radius: 12px;
+    }
+
+    .cinema-site .history-ticket {
+        background: #101827;
+        border-left: 3px solid #536b91;
+    }
+
+    .cinema-site .ticket-card {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        max-width: 860px;
+        padding: 0;
+        overflow: hidden;
+        border-color: #506684;
+        background: #141e30;
+    }
+
+    .ticket-body,
+    .ticket-stub {
+        padding: 23px;
+    }
+
+    .cinema-site .ticket-stub {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: stretch;
+        border-left: 2px dashed #60799f;
+        background: #1a2a43;
+        text-align: center;
+    }
+
+    .cinema-site .ticket-qr {
+        margin: 12px 0;
+        padding: 0;
+        border: 0;
+    }
+
+    .cinema-site .ticket-masthead,
+    .cinema-site .ticket-reference strong {
+        color: #ff9ba7;
+    }
+}
+
+/* Tablet */
+
+@media screen and (max-width: 960px) {
+    .cinema-site .cinema-nav {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .cinema-nav .nav-links {
+        grid-row: 2;
+        grid-column: 1 / -1;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cinema-nav .cinema-logo {
+        text-align: left;
+    }
+
+    .cinema-site .movie-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cinema-home .hero h1 {
+        font-size: 44px;
+    }
+
+}
+
+/* Phones */
+
+@media screen and (max-width: 680px) {
+    .cinema-site .cinema-nav {
+        padding: 12px 4%;
+        gap: 8px;
+    }
+
+    .cinema-site .cinema-nav .cinema-logo {
+        font-size: 21px;
+    }
+
+    .cinema-nav .nav-links,
+    .cinema-nav-actions {
+        gap: 8px;
+    }
+
+    .cinema-nav .nav-links a,
+    .cinema-nav .nav-account,
+    .cinema-nav .nav-button {
+        font-size: 12px;
+    }
+
+    .cinema-nav .nav-button {
+        padding: 7px 8px;
+    }
+
+    .cinema-nav .nav-profile {
+        gap: 5px;
+    }
+
+    .nav-profile-avatar {
+        width: 22px;
+        height: 22px;
+    }
+
+    .nav-profile-name {
+        max-width: 22vw;
+    }
+
+    .cinema-home .hero {
+        min-height: 350px;
+        padding: 45px 5%;
+    }
+
+    .cinema-site.cinema-home {
+        background-image: linear-gradient(rgba(9, 14, 24, 0.68), rgba(9, 14, 24, 0.85)), url("../images/banner.jpg");
+    }
+
+    .cinema-home .hero h1,
+    .cinema-site h1 {
+        font-size: 34px;
+    }
+
+    .cinema-site .cinema-footer-inner,
+    .cinema-site .booking-layout,
+    .cinema-site .details-container,
+    .cinema-site .featured-container,
+    .cinema-site .ticket-card,
+    .cinema-site.customer-account .account-card {
+        grid-template-columns: 1fr;
+    }
+
+    .cinema-site .movies-section,
+    .cinema-site .featured-section,
+    .cinema-site .showtimes-section,
+    .cinema-site .features-section,
+    .cinema-site .details-section,
+    .cinema-site .showtimes-page,
+    .cinema-site .booking-section,
+    .cinema-site .checkout-section,
+    .cinema-site .confirmation-section,
+    .cinema-site .contact-section {
+        width: 92%;
+        padding: 25px 0;
+    }
+
+    .cinema-site .movie-container {
+        gap: 10px;
+    }
+
+    .cinema-site .movie-info {
+        padding: 10px;
+    }
+
+    .cinema-site .movie-info h3 {
+        font-size: 16px;
+    }
+
+    .cinema-site .search-container input,
+    .cinema-site .search-container select {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .cinema-site .details-container img {
+        max-width: 220px;
+        margin: 0 auto;
+    }
+
+    .cinema-site .booking-summary,
+    .cinema-site .checkout-summary {
+        position: static;
+    }
+
+    .booking-summary-actions {
+        grid-template-columns: minmax(72px, auto) 1fr;
+        align-items: center;
+    }
+
+    .cinema-site .booking-summary-actions button {
+        padding: 10px 8px;
+    }
+
+    .cinema-site .schedule-card {
+        gap: 12px;
+    }
+
+    .cinema-site .schedule-card img {
+        width: 80px;
+        height: 120px;
+    }
+
+    .cinema-site .booking-info,
+    .cinema-site .seat-section {
+        padding: 12px;
+    }
+
+    .cinema-site .seat-row {
+        gap: 4px;
+    }
+
+    .cinema-site .seat-row button:nth-child(4) {
+        margin-right: 5px;
+    }
+
+    .cinema-site .seat {
+        width: 32px;
+        height: 34px;
+    }
+
+    .cinema-site .ticket-stub {
+        border-left: 0;
+        border-top: 2px dashed #60799f;
+    }
+
+    .cinema-site .booking-history-list {
+        grid-template-columns: 1fr;
+    }
+}

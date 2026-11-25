@@ -1,0 +1,14 @@
+p.field-error {
+    margin: 4px 0 0;
+    color: #fca5a5;
+    font-size: 0.875rem;
+    line-height: 1.45;
+}
+
+p.field-error:empty {
+    display: none;
+}
+
+[aria-invalid="true"] {
+    box-shadow: 0 0 0 1px #f58b98;
+}
