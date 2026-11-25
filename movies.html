@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CineVerse | Movies</title>
+
+    <link rel="stylesheet" href="css/style.css?v=7">
+    <link rel="stylesheet" href="css/responsive.css?v=3">
+
+    <script src="js/account.js?v=13" defer></script>
+    <link rel="stylesheet" href="css/cinema.css?v=9">
+</head>
+
+<body class="cinema-site">
+
+    <header class="navbar cinema-nav">
+        <a class="logo cinema-logo" href="index.html">Cine<span>Verse</span></a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="movies.html">Movies</a>
+            <a href="showtimes.html">Showtimes</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="cinema-nav-actions">
+            <a class="nav-account" href="account.html" data-account-link>Log In</a>
+            <a class="nav-button" href="booking.html">Book Tickets</a>
+        </div>
+    </header>
+
+    <!-- Movies Page -->
+    <div class="movies-section" id="movies">
+
+        <h1>Explore Movies</h1>
+
+        <p>
+            Discover the latest movies and find your next cinema experience.
+        </p>
+
+
+        <!-- Search and Filter Movies -->
+        <div class="search-container" role="search" aria-label="Find movies">
+
+            <input
+                type="search"
+                id="movieSearch"
+                aria-label="Search by movie title"
+                placeholder="Search by movie title"
+            >
+
+            <select id="genreFilter" aria-label="Filter by genre">
+                <option value="all">All Genres</option>
+                <option value="action">Action</option>
+                <option value="horror">Horror</option>
+                <option value="sci-fi">Sci-Fi</option>
+                <option value="animation">Animation</option>
+                <option value="comedy">Comedy</option>
+                <option value="drama">Drama</option>
+                <option value="thriller">Thriller</option>
+                <option value="adventure">Adventure</option>
+            </select>
+            <button type="button" id="clearMovieFilters" class="second-button">Clear Filters</button>
+
+        </div>
+
+        <p id="movieSearchStatus" role="status">Loading movies…</p>
+
+        <!-- Now Showing -->
+        <div data-filter-results>
+            <h2>Now Showing</h2>
+
+            <div class="movie-container" data-movie-list="Now Showing"></div>
+        </div>
+
+    </div>
+
+
+    <!-- Coming Soon Section -->
+    <div class="movies-section coming-soon" data-filter-results>
+
+        <h2>Coming Soon</h2>
+
+        <div class="movie-container" data-movie-list="Coming Soon"></div>
+
+    </div>
+
+
+    <footer class="footer cinema-footer">
+        <div class="cinema-footer-inner">
+            <div class="footer-brand">
+                <a class="logo cinema-logo" href="index.html">Cine<span>Verse</span></a>
+                <p>Find movies, choose a showtime, and book your seats.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="movies.html">Movies</a>
+                <a href="showtimes.html">Showtimes</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-account">
+                <a href="account.html">My Account</a>
+                <a href="booking.html">Book Tickets</a>
+            </div>
+        </div>
+        <p class="cinema-copyright">© 2026 CineVerse. All rights reserved.</p>
+    </footer>
+
+    <!-- Movies JavaScript -->
+    <script src="js/catalog.js?v=4"></script>
+    <script src="js/catalog-display.js?v=5"></script>
+    <script src="js/movies.js?v=3"></script>
+</body>
+
+</html>

@@ -1,0 +1,433 @@
+.account-card {
+    box-sizing: border-box;
+    width: 92%;
+    max-width: 440px;
+    margin: 40px auto;
+    padding: 24px;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    background: #111827;
+}
+
+.account-card h1 {
+    margin-top: 0;
+}
+
+.account-card label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 6px;
+}
+
+.account-card input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #64748b;
+    border-radius: 6px;
+    background: #0b0f19;
+    color: white;
+    font: inherit;
+}
+
+.account-card [aria-invalid="true"] {
+    border-color: #fca5a5;
+}
+
+.account-card button {
+    width: 100%;
+    border: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
+.account-card button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.account-card :focus-visible {
+    outline: 2px solid #fca5a5;
+    outline-offset: 3px;
+}
+
+.account-card p {
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.account-card a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.account-note {
+    color: #cbd5e1;
+    font-size: 0.875rem;
+}
+
+.account-error {
+    color: #fca5a5;
+}
+
+.account-status {
+    color: #86efac;
+}
+
+
+/* Login and Sign Up */
+
+.account-entry {
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 24px 16px;
+    background: #111827;
+    font-family: Arial, sans-serif;
+}
+
+.account-entry .cinema-nav,
+.account-entry .cinema-footer {
+    display: none;
+}
+
+.account-entry .account-card {
+    width: 100%;
+    max-width: 420px;
+    margin: 0;
+    padding: 24px;
+    border-radius: 16px;
+    background: #151e2d;
+    color: #e2e8f0;
+    font-size: 16px;
+}
+
+.account-entry h1 {
+    margin: 0 0 22px;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+.account-entry label {
+    margin: 16px 0 7px;
+}
+
+.account-entry input {
+    min-height: 44px;
+    border-radius: 8px;
+}
+
+.account-entry #accountError:empty {
+    display: none;
+}
+
+.account-entry #accountSubmit {
+    min-height: 46px;
+    margin-top: 16px;
+    border-radius: 8px;
+    background-color: #ed0712;
+    font-weight: 700;
+}
+
+.account-entry #accountSubmit:hover {
+    background-color: #c80711;
+}
+
+.account-entry #accountOptions {
+    text-align: center;
+}
+
+.account-entry #accountOptions p {
+    margin: 16px 0 20px;
+}
+
+.account-entry #accountOptions a {
+    color: inherit;
+}
+
+.account-entry #accountOptions .back-to-movies {
+    display: block;
+    padding-top: 16px;
+    border-top: 1px solid #334155;
+    color: #94a3b8;
+    text-decoration: none;
+}
+
+.account-entry #accountOptions .back-to-movies:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+/* Customer Account */
+
+.cinema-site.customer-account .account-card {
+    grid-template-columns: minmax(232px, 1fr) minmax(0, 2.4fr);
+    width: 92%;
+    margin: 34px auto 48px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+.customer-account .account-card h1 {
+    margin: 0;
+}
+
+.cinema-site.customer-account #accountProfile,
+.cinema-site.customer-account .booking-history {
+    padding: 22px;
+    min-width: 0;
+}
+
+.booking-history {
+    overflow-wrap: anywhere;
+}
+
+.booking-history h2 {
+    margin: 0 0 18px;
+    font-size: 24px;
+}
+
+.next-booking {
+    margin: 0 0 24px;
+}
+
+.next-booking h3 {
+    margin: 0 0 10px;
+    color: #ffabb5;
+}
+
+.booking-history .next-booking .history-ticket {
+    border-color: #8e3b51;
+    border-left: 4px solid #e63348;
+    background-color: #1b2538;
+}
+
+.next-booking .history-ticket img {
+    width: 92px;
+    height: 134px;
+    flex-shrink: 0;
+}
+
+.next-booking .history-ticket h4 {
+    font-size: 19px;
+}
+
+.booking-history-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.history-ticket {
+    display: flex;
+    align-items: stretch;
+    gap: 14px;
+    padding: 14px;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    background: #171e2e;
+}
+
+.history-ticket img {
+    width: 72px;
+    height: 104px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.history-ticket-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+}
+
+.history-ticket h4 {
+    margin: 6px 0;
+}
+
+.history-ticket p {
+    margin: 3px 0;
+    color: #cbd5e1;
+    font-size: 0.875rem;
+}
+
+.history-ticket-status {
+    color: #86efac;
+    font-size: 0.8125rem;
+    font-weight: bold;
+}
+
+.history-ticket-status.is-cancelled {
+    color: #fda4af;
+}
+
+.history-ticket p.history-ticket-total {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.account-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.profile-initial {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #804454;
+    border-radius: 50%;
+    background: #392439;
+    color: #ff9ba7;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 43px;
+    text-align: center;
+}
+
+.profile-details {
+    min-width: 0;
+}
+
+.profile-details h2 {
+    margin: 0;
+    font-size: 19px;
+    overflow-wrap: anywhere;
+}
+
+.profile-details p {
+    margin: 4px 0 0;
+    color: #bac6d9;
+    font-size: 14px;
+}
+
+.account-card .account-secondary-button {
+    display: inline-block;
+    padding: 9px 13px;
+    border: 1px solid #516583;
+    border-radius: 8px;
+    background: #1a2a42;
+    color: #edf4ff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.account-card .account-secondary-button:hover {
+    border-color: #f58b98;
+    background: #263954;
+}
+
+.account-settings-group {
+    padding-top: 15px;
+    border-top: 1px solid #35445f;
+}
+
+.account-settings-group h3 {
+    margin: 0 0 4px;
+    color: #bac6d9;
+    font-size: 14px;
+}
+
+.account-settings {
+    border-bottom: 1px solid #2b3951;
+}
+
+.account-settings summary {
+    padding: 11px 4px;
+    color: #edf4ff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.account-settings summary::marker {
+    color: #a8b8d3;
+}
+
+.account-settings summary:hover,
+.account-settings[open] summary {
+    color: #ffabb5;
+}
+
+.account-settings form {
+    padding: 0 4px 14px;
+}
+
+.account-settings form button {
+    margin-top: 12px;
+}
+
+#profileStatus:empty,
+#profileError:empty {
+    display: none;
+}
+
+.account-card .account-logout {
+    width: auto;
+    margin-top: 10px;
+    padding: 8px 4px;
+    background: transparent;
+    color: #ffc1c8;
+    font-size: 14px;
+}
+
+.account-card .account-logout:hover {
+    text-decoration: underline;
+}
+
+.booking-history .ticket-empty-state {
+    padding: 32px 18px;
+    border: 1px solid #34435f;
+    border-radius: 12px;
+    background: #101827;
+    text-align: center;
+}
+
+.ticket-empty-state h3 {
+    margin: 0;
+}
+
+.ticket-empty-state p {
+    color: #bac6d9;
+}
+
+.account-card .ticket-empty-action {
+    padding: 10px 16px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.account-status:empty {
+    display: none;
+}
+
+.history-ticket-link {
+    margin-top: auto;
+}
+
+@media screen and (max-width: 680px) {
+    .cinema-site.customer-account .account-card {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin: 24px auto 32px;
+    }
+
+    .cinema-site.customer-account #accountProfile,
+    .cinema-site.customer-account .booking-history {
+        padding: 16px;
+    }
+
+    .next-booking .history-ticket img {
+        width: 72px;
+        height: 104px;
+    }
+}

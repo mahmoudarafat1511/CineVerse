@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineVerse | Account</title>
+    <link rel="stylesheet" href="css/style.css?v=7">
+    <link rel="stylesheet" href="css/responsive.css?v=3">
+    <script src="js/field-validation.js?v=3" defer></script>
+    <script src="js/account.js?v=13" defer></script>
+    <link rel="stylesheet" href="css/cinema.css?v=9">
+    <link rel="stylesheet" href="css/account.css?v=13">
+    <link rel="stylesheet" href="css/field-validation.css">
+</head>
+<body class="account-entry cinema-site">
+    <header class="navbar cinema-nav">
+        <a class="logo cinema-logo" href="index.html">Cine<span>Verse</span></a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="movies.html">Movies</a>
+            <a href="showtimes.html">Showtimes</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="cinema-nav-actions">
+            <a class="nav-account" href="account.html" data-account-link>Log In</a>
+            <a class="nav-button" href="booking.html">Book Tickets</a>
+        </div>
+    </header>
+
+    <main class="account-card">
+        <h1 id="accountTitle">Log In</h1>
+        <form id="accountForm" novalidate>
+            <div id="signupName" hidden>
+                <label for="accountName">Full name</label>
+                <input id="accountName" autocomplete="name" maxlength="80" aria-describedby="accountNameError">
+                <p id="accountNameError" class="field-error" role="alert"></p>
+            </div>
+
+            <label for="accountEmail">Email address</label>
+            <input id="accountEmail" type="email" autocomplete="username" maxlength="254" aria-describedby="accountEmailError" required>
+            <p id="accountEmailError" class="field-error" role="alert"></p>
+
+            <label for="accountPassword">Password</label>
+            <input id="accountPassword" type="password" autocomplete="current-password" maxlength="128" aria-describedby="accountPasswordError" required>
+            <p id="accountPasswordError" class="field-error" role="alert"></p>
+            <p class="account-note" id="passwordHint" hidden>Use at least 8 characters, including a letter and a number.</p>
+
+            <div id="signupConfirmation" hidden>
+                <label for="accountConfirmation">Confirm password</label>
+                <input id="accountConfirmation" type="password" autocomplete="new-password" maxlength="128" aria-describedby="accountConfirmationError">
+                <p id="accountConfirmationError" class="field-error" role="alert"></p>
+            </div>
+
+            <p id="accountError" class="account-error" role="alert"></p>
+            <button id="accountSubmit" class="main-button" type="submit">Log In</button>
+        </form>
+
+        <div id="accountOptions">
+            <p id="signupLink">Don't have an account? <a href="account.html?mode=signup">Sign Up</a></p>
+            <p id="signupLogin" hidden><a href="account.html">Already have an account? Log in</a></p>
+            <a class="back-to-movies" href="movies.html#movies"><span aria-hidden="true">←</span> Back to Movies</a>
+        </div>
+
+        <div id="accountProfile" hidden>
+            <div class="account-profile-header">
+                <span id="accountInitial" class="profile-initial" aria-hidden="true"></span>
+                <div class="profile-details">
+                    <h2 id="accountProfileName"></h2>
+                    <p id="accountProfileEmail"></p>
+                </div>
+            </div>
+            <section class="account-settings-group" aria-labelledby="accountSettingsTitle">
+                <h3 id="accountSettingsTitle">Account Settings</h3>
+                <details id="editProfile" class="account-settings">
+                    <summary>Edit Profile</summary>
+                    <form id="editProfileForm" novalidate>
+                        <label for="profileName">Display name</label>
+                        <input id="profileName" autocomplete="name" maxlength="80" aria-describedby="profileNameError" required>
+                        <p id="profileNameError" class="field-error" role="alert"></p>
+
+                        <label for="profileEmail">Email address</label>
+                        <input id="profileEmail" type="email" autocomplete="email" maxlength="254" aria-describedby="profileEmailError" required>
+                        <p id="profileEmailError" class="field-error" role="alert"></p>
+                        <p id="profileError" class="account-error" role="alert"></p>
+                        <button id="profileSubmit" class="main-button" type="submit">Save Profile</button>
+                    </form>
+                </details>
+                <p id="profileStatus" class="account-status" role="status"></p>
+
+                <details id="changePassword" class="account-settings" hidden>
+                    <summary>Change Password</summary>
+                    <form id="changePasswordForm" novalidate>
+                        <label for="currentPassword">Current password</label>
+                        <input id="currentPassword" type="password" autocomplete="current-password" maxlength="128" aria-describedby="currentPasswordError" required>
+                        <p id="currentPasswordError" class="field-error" role="alert"></p>
+
+                        <label for="newPassword">New password</label>
+                        <input id="newPassword" type="password" autocomplete="new-password" maxlength="128" aria-describedby="newPasswordError newPasswordHint" required>
+                        <p id="newPasswordError" class="field-error" role="alert"></p>
+                        <p class="account-note" id="newPasswordHint">Use at least 8 characters, including a letter and a number.</p>
+
+                        <label for="newPasswordConfirmation">Confirm new password</label>
+                        <input id="newPasswordConfirmation" type="password" autocomplete="new-password" maxlength="128" aria-describedby="newPasswordConfirmationError" required>
+                        <p id="newPasswordConfirmationError" class="field-error" role="alert"></p>
+
+                        <p id="changePasswordError" class="account-error" role="alert"></p>
+                        <button id="changePasswordSubmit" class="main-button" type="submit">Update Password</button>
+                    </form>
+                </details>
+                <p id="changePasswordStatus" class="account-status" role="status"></p>
+            </section>
+            <button id="accountLogout" class="account-logout" type="button">Log Out</button>
+        </div>
+
+        <section id="booking-history" class="booking-history" hidden>
+            <h2>My Tickets</h2>
+            <div id="bookingHistoryEmpty" class="ticket-empty-state" hidden>
+                <h3>No tickets yet</h3>
+                <p>Once you book a screening, your tickets will appear here.</p>
+                <a href="movies.html#movies" class="main-button ticket-empty-action">Explore Movies</a>
+            </div>
+            <p id="bookingHistoryError" class="account-error" role="alert" hidden></p>
+            <section class="next-booking" id="nextBookingSection" hidden>
+                <h3>Your Next Screening</h3>
+                <div id="nextBooking"></div>
+            </section>
+            <section id="upcomingBookingsSection" hidden>
+                <h3>Upcoming</h3>
+                <div class="booking-history-list" id="upcomingBookings"></div>
+            </section>
+            <section id="previousBookingsSection" hidden>
+                <h3>Previous</h3>
+                <div class="booking-history-list" id="previousBookings"></div>
+            </section>
+        </section>
+
+        <template id="bookingHistoryCard">
+            <article class="history-ticket">
+                <img alt="" width="85" height="120">
+                <div class="history-ticket-details">
+                    <span class="history-ticket-status"></span>
+                    <h4></h4>
+                    <p class="history-ticket-screening"></p>
+                    <p class="history-ticket-seats"></p>
+                    <p class="history-ticket-reference"></p>
+                    <p class="history-ticket-total"></p>
+                    <a class="history-ticket-link account-secondary-button">View Ticket</a>
+                </div>
+            </article>
+        </template>
+    </main>
+    <footer class="footer cinema-footer">
+        <div class="cinema-footer-inner">
+            <div class="footer-brand">
+                <a class="logo cinema-logo" href="index.html">Cine<span>Verse</span></a>
+                <p>Find movies, choose a showtime, and book your seats.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="movies.html">Movies</a>
+                <a href="showtimes.html">Showtimes</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-account">
+                <a href="account.html">My Account</a>
+                <a href="booking.html">Book Tickets</a>
+            </div>
+        </div>
+        <p class="cinema-copyright">© 2026 CineVerse. All rights reserved.</p>
+    </footer>
+
+    <script src="js/catalog.js?v=4"></script>
+    <script src="js/booking-records.js?v=8"></script>
+    <script src="js/booking-history.js?v=4" defer></script>
+</body>
+</html>

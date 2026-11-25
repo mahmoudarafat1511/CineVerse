@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CineVerse | Movie Details</title>
+
+    <link rel="stylesheet" href="css/style.css?v=7">
+    <link rel="stylesheet" href="css/responsive.css?v=3">
+
+    <script src="js/account.js?v=13" defer></script>
+    <link rel="stylesheet" href="css/cinema.css?v=9">
+</head>
+
+<body class="cinema-site">
+
+    <header class="navbar cinema-nav">
+        <a class="logo cinema-logo" href="index.html">Cine<span>Verse</span></a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="movies.html">Movies</a>
+            <a href="showtimes.html">Showtimes</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="cinema-nav-actions">
+            <a class="nav-account" href="account.html" data-account-link>Log In</a>
+            <a class="nav-button" href="booking.html">Book Tickets</a>
+        </div>
+    </header>
+
+    <!-- Movie Details Section -->
+    <div class="details-section">
+
+        <h1>Movie Details</h1>
+
+        <div class="details-container">
+
+            <!-- Movie Poster -->
+            <img
+                id="detailsPoster"
+                src="images/movie1.jpg"
+                alt="Movie Poster"
+            >
+
+            <!-- Movie Information -->
+            <div class="details-info">
+
+                <p class="hero-label" id="detailsLabel"></p>
+
+                <h2 id="detailsTitle"></h2>
+                <p id="detailsAvailability" hidden>Showtimes will appear when this movie is available to book.</p>
+
+                <div id="detailsMetadata">
+                    <p><b>Genre:</b> <span id="detailsGenre"></span></p>
+                    <p><b>Status:</b> <span id="detailsStatus"></span></p>
+                    <p><b>Age Rating:</b> <span id="detailsRating"></span></p>
+                    <p><b>Duration:</b> <span id="detailsDuration"></span></p>
+
+                    <h3>About the Movie</h3>
+                    <p id="detailsDescription"></p>
+                </div>
+
+                <a
+                    href="booking.html"
+                    class="main-button"
+                    id="detailsBook"
+                >
+                    Book Tickets
+                </a>
+
+                <a href="movies.html" class="second-button">
+                    Back to Movies
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer class="footer cinema-footer">
+        <div class="cinema-footer-inner">
+            <div class="footer-brand">
+                <a class="logo cinema-logo" href="index.html">Cine<span>Verse</span></a>
+                <p>Find movies, choose a showtime, and book your seats.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="movies.html">Movies</a>
+                <a href="showtimes.html">Showtimes</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-account">
+                <a href="account.html">My Account</a>
+                <a href="booking.html">Book Tickets</a>
+            </div>
+        </div>
+        <p class="cinema-copyright">© 2026 CineVerse. All rights reserved.</p>
+    </footer>
+
+    <!-- Movie Details JavaScript -->
+    <script src="js/catalog.js?v=4"></script>
+    <script src="js/main.js?v=4"></script>
+
+</body>
+
+</html>

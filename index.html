@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineVerse | Home</title>
+
+    <link rel="stylesheet" href="css/style.css?v=7">
+    <link rel="stylesheet" href="css/responsive.css?v=3">
+
+    <script src="js/catalog.js?v=4"></script>
+    <script src="js/account.js?v=13" defer></script>
+    <link rel="stylesheet" href="css/cinema.css?v=9">
+</head>
+
+<body class="cinema-site cinema-home">
+
+    <header class="navbar cinema-nav">
+        <a class="logo cinema-logo" href="index.html">Cine<span>Verse</span></a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="movies.html">Movies</a>
+            <a href="showtimes.html">Showtimes</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="cinema-nav-actions">
+            <a class="nav-account" href="account.html" data-account-link>Log In</a>
+            <a class="nav-button" href="booking.html">Book Tickets</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+
+        <div class="hero-content">
+
+            <h1>Experience Movies <span>Like Never Before</span></h1>
+
+            <p class="hero-description">
+                Find your next film, choose a showtime, and reserve your favorite seats.
+            </p>
+
+            <div class="hero-actions">
+                <a href="movies.html#movies" class="main-button">Explore Movies</a>
+                <a href="showtimes.html" class="second-button">View Showtimes</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Now Showing Section -->
+    <div class="movies-section">
+
+        <div class="section-heading">
+            <h2>Now Showing</h2>
+            <a href="movies.html">View All Movies</a>
+        </div>
+
+        <div class="movie-container" data-movie-list="Now Showing"></div>
+
+    </div>
+
+
+    <!-- Featured Movie Section -->
+    <div class="featured-section" data-featured-movie="5">
+
+        <div class="featured-container">
+
+            <img src="images/movie5.jpg" alt="Avengers Doomsday">
+
+            <div class="featured-info">
+
+                <p class="hero-label">Featured Movie</p>
+
+                <h2>Avengers: Doomsday</h2>
+
+                <p>Action | Sci-Fi | Adventure</p>
+
+                <p>
+                    The Avengers return for an epic new adventure
+                    as they face a powerful new threat.
+                    Get ready for an unforgettable cinema experience.
+                </p>
+
+                <a href="movie-details.html?id=5" class="main-button">
+                    View Movie Details
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Coming Soon Section -->
+    <div class="movies-section coming-soon">
+
+        <div class="section-heading">
+            <h2>Coming Soon</h2>
+        </div>
+
+        <div class="movie-container" data-movie-list="Coming Soon"></div>
+
+    </div>
+
+
+    <section class="showtimes-section">
+        <div class="section-heading">
+            <h2>Next Showtimes</h2>
+            <a href="showtimes.html">View All Showtimes</a>
+        </div>
+        <div class="showtimes-container" id="homeShowtimes"></div>
+        <template id="homeShowtimeCard">
+            <article class="showtime-card">
+                <p class="home-screening-time"></p>
+                <h3></h3>
+                <p class="home-screening-cinema"></p>
+                <a class="movie-button">Book Now</a>
+            </article>
+        </template>
+    </section>
+
+    <footer class="footer cinema-footer">
+        <div class="cinema-footer-inner">
+            <div class="footer-brand">
+                <a class="logo cinema-logo" href="index.html">Cine<span>Verse</span></a>
+                <p>Find movies, choose a showtime, and book your seats.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="movies.html">Movies</a>
+                <a href="showtimes.html">Showtimes</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-account">
+                <a href="account.html">My Account</a>
+                <a href="booking.html">Book Tickets</a>
+            </div>
+        </div>
+        <p class="cinema-copyright">© 2026 CineVerse. All rights reserved.</p>
+    </footer>
+
+    <script src="js/booking-records.js?v=8"></script>
+    <script src="js/screening-schedule.js"></script>
+    <script src="js/catalog-display.js?v=5"></script>
+</body>
+
+</html>
