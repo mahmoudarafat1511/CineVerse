@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CineVerse | Showtimes</title>
+
+    <link rel="stylesheet" href="css/style.css?v=7">
+    <link rel="stylesheet" href="css/responsive.css?v=3">
+
+    <script src="js/account.js?v=13" defer></script>
+    <link rel="stylesheet" href="css/cinema.css?v=9">
+    <link rel="stylesheet" href="css/field-validation.css">
+</head>
+
+<body class="cinema-site">
+
+    <header class="navbar cinema-nav">
+        <a class="logo cinema-logo" href="index.html">Cine<span>Verse</span></a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="movies.html">Movies</a>
+            <a href="showtimes.html">Showtimes</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="cinema-nav-actions">
+            <a class="nav-account" href="account.html" data-account-link>Log In</a>
+            <a class="nav-button" href="booking.html">Book Tickets</a>
+        </div>
+    </header>
+
+    <!-- Showtimes Page -->
+    <div class="showtimes-page">
+
+        <h1>Movie Showtimes</h1>
+
+        <p>
+            Find your favorite movie, choose a cinema,
+            and explore available screening times.
+        </p>
+
+
+        <!-- Cinema and Date Filters -->
+        <div class="showtimes-filter">
+
+            <!-- Choose Cinema -->
+            <label for="cinemaFilter">Choose Cinema:</label>
+
+            <select id="cinemaFilter">
+
+                <option value="all">All Cinemas</option>
+                <option value="citystars">City Stars</option>
+                <option value="mallofegypt">Mall of Egypt</option>
+                <option value="cfc">Cairo Festival City</option>
+
+            </select>
+
+
+            <!-- Choose Date -->
+            <label for="showDate">Choose Date:</label>
+
+            <div>
+                <input type="date" id="showDate" aria-describedby="showDateError">
+                <p id="showDateError" class="field-error" role="alert"></p>
+            </div>
+
+        </div>
+
+
+        <div class="showtimes-list" id="showtimesList"></div>
+        <template id="showtimeCard">
+            <article class="schedule-card">
+                <img alt="" width="112" height="168">
+                <div class="schedule-info">
+                    <h2></h2>
+                    <p class="schedule-genre"></p>
+                    <p class="schedule-cinema"></p>
+                    <div class="schedule-times"></div>
+                    <a class="second-button">Book Now</a>
+                </div>
+            </article>
+        </template>
+    </div>
+
+
+    <footer class="footer cinema-footer">
+        <div class="cinema-footer-inner">
+            <div class="footer-brand">
+                <a class="logo cinema-logo" href="index.html">Cine<span>Verse</span></a>
+                <p>Find movies, choose a showtime, and book your seats.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="movies.html">Movies</a>
+                <a href="showtimes.html">Showtimes</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-account">
+                <a href="account.html">My Account</a>
+                <a href="booking.html">Book Tickets</a>
+            </div>
+        </div>
+        <p class="cinema-copyright">© 2026 CineVerse. All rights reserved.</p>
+    </footer>
+
+    <!-- Showtimes JavaScript -->
+    <script src="js/catalog.js?v=4"></script>
+    <script src="js/booking-records.js?v=8"></script>
+    <script src="js/screening-schedule.js"></script>
+    <script src="js/field-validation.js?v=3"></script>
+    <script src="js/showtimes.js?v=6"></script>
+
+</body>
+
+</html>

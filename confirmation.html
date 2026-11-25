@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CineVerse | Booking Confirmation</title>
+
+    <link rel="stylesheet" href="css/style.css?v=7">
+    <link rel="stylesheet" href="css/responsive.css?v=3">
+
+    <script src="js/account.js?v=13" defer></script>
+    <link rel="stylesheet" href="css/cinema.css?v=9">
+</head>
+
+<body class="cinema-site">
+
+    <header class="navbar cinema-nav">
+        <a class="logo cinema-logo" href="index.html">Cine<span>Verse</span></a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="movies.html">Movies</a>
+            <a href="showtimes.html">Showtimes</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="cinema-nav-actions">
+            <a class="nav-account" href="account.html" data-account-link>Log In</a>
+            <a class="nav-button" href="booking.html">Book Tickets</a>
+        </div>
+    </header>
+
+    <!-- Confirmation Page -->
+    <div class="confirmation-section">
+
+        <div id="confirmationContent" style="display: none;">
+
+            <div class="confirmation-heading">
+
+                <div class="success-icon" id="ticketOutcomeIcon" aria-hidden="true">✓</div>
+
+                <h1 id="ticketOutcome">Booking Confirmed!</h1>
+
+                <p id="ticketOutcomeMessage">
+                    Your booking has been confirmed.
+                    Thank you for choosing CineVerse!
+                </p>
+
+            </div>
+
+
+            <!-- Ticket Details -->
+            <article class="ticket-card">
+                <div class="ticket-body">
+                    <div class="ticket-hero">
+                        <img id="ticketPoster" alt="" width="120" height="168">
+                        <div>
+                            <p class="ticket-masthead">CineVerse · Digital Ticket</p>
+                            <h2 id="ticketMovie"></h2>
+                            <p class="ticket-reference">
+                                Booking Reference:
+                                <strong id="ticketReference">-</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="summary-row">
+                        <span>Customer</span>
+                        <strong id="ticketCustomer">-</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Cinema</span>
+                        <strong id="ticketCinema">-</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Date</span>
+                        <strong id="ticketDate">-</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Time</span>
+                        <strong id="ticketTime">-</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Seats</span>
+                        <strong id="ticketSeats">-</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Tickets</span>
+                        <strong id="ticketQuantity">-</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Status</span>
+                        <strong id="ticketStatus">Confirmed</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Payment</span>
+                        <strong>Pay at Cinema</strong>
+                    </div>
+
+                    <hr>
+
+                    <div class="summary-row total-row">
+                        <span>Total Price</span>
+                        <strong>
+                            <span id="ticketTotal">0</span> EGP
+                        </strong>
+                    </div>
+                </div>
+
+                <div class="ticket-stub">
+                    <figure class="ticket-qr" id="ticketQRSection" hidden>
+                        <canvas id="ticketQR" role="img" aria-label="QR code containing the booking reference"></canvas>
+                        <figcaption>Booking reference QR code</figcaption>
+                    </figure>
+
+                    <p class="ticket-note">
+                        This is a demonstration ticket.
+                        No real reservation has been made.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <div class="confirmation-actions">
+
+                <a href="account.html#booking-history" class="main-button">
+                    My Tickets
+                </a>
+                <a href="index.html" class="second-button">Back to Home</a>
+
+                <button
+                    type="button"
+                    class="second-button print-button"
+                    id="printTicket">
+
+                    Print Ticket
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Message If No Booking Exists -->
+        <div id="confirmationError" style="display: none;">
+
+            <h1>Ticket Unavailable</h1>
+
+            <p id="ticketErrorMessage">This ticket isn’t available for the current account.</p>
+            <a id="ticketLogin" class="main-button" href="account.html" hidden>Log In</a>
+
+            <a href="booking.html" class="main-button">
+                Book Tickets
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <footer class="footer cinema-footer">
+        <div class="cinema-footer-inner">
+            <div class="footer-brand">
+                <a class="logo cinema-logo" href="index.html">Cine<span>Verse</span></a>
+                <p>Find movies, choose a showtime, and book your seats.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="movies.html">Movies</a>
+                <a href="showtimes.html">Showtimes</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-account">
+                <a href="account.html">My Account</a>
+                <a href="booking.html">Book Tickets</a>
+            </div>
+        </div>
+        <p class="cinema-copyright">© 2026 CineVerse. All rights reserved.</p>
+    </footer>
+
+    <script src="js/catalog.js?v=4"></script>
+    <script src="js/booking-records.js?v=8"></script>
+    <script src="js/ticket-qr.js"></script>
+    <script src="js/confirmation.js?v=3" defer></script>
+
+</body>
+
+</html>

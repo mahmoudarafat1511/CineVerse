@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CineVerse | Checkout</title>
+
+    <link rel="stylesheet" href="css/style.css?v=7">
+    <link rel="stylesheet" href="css/responsive.css?v=3">
+
+    <script src="js/account.js?v=13" defer></script>
+    <link rel="stylesheet" href="css/cinema.css?v=9">
+    <link rel="stylesheet" href="css/field-validation.css">
+</head>
+
+<body class="cinema-site">
+
+    <header class="navbar cinema-nav">
+        <a class="logo cinema-logo" href="index.html">Cine<span>Verse</span></a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="movies.html">Movies</a>
+            <a href="showtimes.html">Showtimes</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="cinema-nav-actions">
+            <a class="nav-account" href="account.html" data-account-link>Log In</a>
+            <a class="nav-button" href="booking.html">Book Tickets</a>
+        </div>
+    </header>
+
+    <!-- Checkout Page -->
+    <div class="booking-section" id="bookingAccountPrompt" hidden>
+        <h1>Log In to Book Tickets</h1>
+        <p>Log in or create an account to book your tickets.</p>
+        <a id="bookingLogIn" class="main-button" href="account.html">Log In</a>
+        <a id="bookingSignUp" class="second-button" href="account.html?mode=signup">Sign Up</a>
+    </div>
+
+    <div class="checkout-section" data-booking-account-required="checkout.html" hidden>
+
+        <h1>Complete Your Booking</h1>
+        <ol class="booking-steps" aria-label="Booking progress">
+            <li>Screening</li>
+            <li>Seats</li>
+            <li aria-current="step">Checkout</li>
+        </ol>
+
+        <p>
+            Review your booking details and enter your
+            information to confirm your tickets.
+        </p>
+
+
+        <div class="checkout-container">
+
+            <!-- Customer Information -->
+            <form class="customer-info" id="checkoutForm" novalidate>
+
+                <h2>Customer Information</h2>
+
+                <label for="customerName">Full Name</label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    aria-describedby="customerNameError"
+                    autocomplete="name"
+                    maxlength="80"
+                    placeholder="Enter your full name">
+                <p id="customerNameError" class="field-error" role="alert"></p>
+
+
+                <label for="customerEmail">Email Address</label>
+
+                <input
+                    type="email"
+                    id="customerEmail"
+                    aria-describedby="customerEmailError"
+                    autocomplete="email"
+                    maxlength="254"
+                    placeholder="Enter your email address">
+                <p id="customerEmailError" class="field-error" role="alert"></p>
+
+
+                <label for="customerPhone">Phone Number</label>
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    aria-describedby="customerPhoneError"
+                    autocomplete="tel"
+                    inputmode="tel"
+                    placeholder="Enter your phone number">
+                <p id="customerPhoneError" class="field-error" role="alert"></p>
+
+
+                <!-- Payment Method -->
+                <h2 class="payment-title">Payment Method</h2>
+
+                <div class="payment-method">
+
+                    <input
+                        type="radio"
+                        id="payCinema"
+                        name="payment"
+                        value="cinema"
+                        checked>
+
+                    <label for="payCinema">
+                        Pay at Cinema
+                    </label>
+
+                </div>
+
+
+                <!-- Confirm Booking -->
+                <button
+                    type="submit"
+                    class="main-button confirm-button"
+                    id="confirmBooking">
+
+                    Confirm Booking
+
+                </button>
+
+                <p id="checkoutError" role="alert"></p>
+
+            </form>
+
+
+            <!-- Booking Summary -->
+            <div class="checkout-summary">
+
+                <h2>Your Booking Summary</h2>
+
+                <div class="summary-row">
+
+                    <span>Movie</span>
+                    <strong id="checkoutMovie">-</strong>
+
+                </div>
+
+                <div class="summary-row">
+
+                    <span>Cinema</span>
+                    <strong id="checkoutCinema">-</strong>
+
+                </div>
+
+                <div class="summary-row">
+
+                    <span>Date</span>
+                    <strong id="checkoutDate">-</strong>
+
+                </div>
+
+                <div class="summary-row">
+
+                    <span>Time</span>
+                    <strong id="checkoutTime">-</strong>
+
+                </div>
+
+                <div class="summary-row">
+
+                    <span>Seats</span>
+                    <strong id="checkoutSeats">-</strong>
+
+                </div>
+
+                <div class="summary-row">
+                    <span>Tickets</span>
+                    <strong id="checkoutQuantity">-</strong>
+                </div>
+
+                <hr>
+
+                <div class="summary-row total-row">
+
+                    <span>Total Price</span>
+
+                    <strong>
+                        <span id="checkoutTotal">0</span> EGP
+                    </strong>
+
+                </div>
+
+                <a href="booking.html" class="second-button edit-selection" id="editSelection">Edit Selection</a>
+
+                <p class="checkout-note">
+                    This is a demonstration booking.
+                    No online payment is required.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer class="footer cinema-footer">
+        <div class="cinema-footer-inner">
+            <div class="footer-brand">
+                <a class="logo cinema-logo" href="index.html">Cine<span>Verse</span></a>
+                <p>Find movies, choose a showtime, and book your seats.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="movies.html">Movies</a>
+                <a href="showtimes.html">Showtimes</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-account">
+                <a href="account.html">My Account</a>
+                <a href="booking.html">Book Tickets</a>
+            </div>
+        </div>
+        <p class="cinema-copyright">© 2026 CineVerse. All rights reserved.</p>
+    </footer>
+
+    <script src="js/catalog.js?v=4"></script>
+    <script src="js/booking-records.js?v=8"></script>
+    <script src="js/screening-schedule.js"></script>
+    <script src="js/field-validation.js?v=3"></script>
+    <script src="js/checkout.js?v=11"></script>
+
+</body>
+
+</html>

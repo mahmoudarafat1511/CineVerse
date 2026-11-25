@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CineVerse | Book Tickets</title>
+
+    <link rel="stylesheet" href="css/style.css?v=7">
+    <link rel="stylesheet" href="css/responsive.css?v=3">
+    <script src="js/account.js?v=13" defer></script>
+    <link rel="stylesheet" href="css/cinema.css?v=9">
+    <link rel="stylesheet" href="css/field-validation.css">
+</head>
+
+<body class="cinema-site">
+
+    <header class="navbar cinema-nav">
+        <a class="logo cinema-logo" href="index.html">Cine<span>Verse</span></a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="movies.html">Movies</a>
+            <a href="showtimes.html">Showtimes</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="cinema-nav-actions">
+            <a class="nav-account" href="account.html" data-account-link>Log In</a>
+            <a class="nav-button" href="booking.html">Book Tickets</a>
+        </div>
+    </header>
+
+    <!-- Booking Page -->
+    <div class="booking-section" id="bookingAccountPrompt" hidden>
+        <h1>Log In to Book Tickets</h1>
+        <p>Log in or create an account to book your tickets.</p>
+        <a id="bookingLogIn" class="main-button" href="account.html">Log In</a>
+        <a id="bookingSignUp" class="second-button" href="account.html?mode=signup">Sign Up</a>
+    </div>
+
+    <div class="booking-section" data-booking-account-required="booking.html" hidden>
+
+        <h1>Book Your Tickets</h1>
+        <ol class="booking-steps" aria-label="Booking progress">
+            <li id="screeningStep" aria-current="step">Screening</li>
+            <li id="seatsStep">Seats</li>
+            <li>Checkout</li>
+        </ol>
+
+        <p>
+            Choose your movie, screening time,
+            and preferred seats.
+        </p>
+        <p class="ticket-price">Ticket Price: <strong id="ticketPrice">150</strong> EGP per seat</p>
+
+
+        <div class="booking-layout">
+            <div class="booking-workspace">
+                <!-- Booking Information -->
+                <div class="booking-info">
+
+                    <h2>Booking Details</h2>
+
+                    <div class="screening-fields" id="screeningFields">
+                        <div>
+                            <label for="bookingMovie">Movie:</label>
+
+                            <select id="bookingMovie" aria-describedby="bookingMovieError">
+                                <option value="">Select Movie</option>
+                            </select>
+                            <p id="bookingMovieError" class="field-error" role="alert"></p>
+                        </div>
+
+
+                        <div>
+                            <label for="bookingCinema">Cinema:</label>
+
+                            <select id="bookingCinema" aria-describedby="bookingCinemaError" required disabled>
+                                <option value="" selected>Select a Cinema</option>
+                            </select>
+                            <p id="bookingCinemaError" class="field-error" role="alert"></p>
+                        </div>
+
+
+                        <div>
+                            <label for="bookingDate">Date:</label>
+
+                            <input type="date" id="bookingDate" aria-describedby="bookingDateError" required disabled>
+                            <p id="bookingDateError" class="field-error" role="alert"></p>
+                        </div>
+
+
+                        <div>
+                            <label for="bookingTime">Time:</label>
+
+                            <select id="bookingTime" aria-describedby="bookingTimeError" required disabled>
+                                <option value="" selected>Select a Showtime</option>
+                            </select>
+                            <p id="bookingTimeError" class="field-error" role="alert"></p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Seat Selection -->
+                <p id="seatPrompt">Choose a movie, cinema, date, and time to see available seats.</p>
+                <div class="seat-section" id="seatSection" hidden>
+
+                    <h2>Choose Your Seats</h2>
+
+                    <div class="cinema-screen">
+                        SCREEN
+                    </div>
+
+                    <div class="seat-container">
+
+                        <!-- Row A -->
+                        <div class="seat-row">
+
+                            <span>A</span>
+
+                            <button class="seat" type="button">A1</button>
+                            <button class="seat" type="button">A2</button>
+                            <button class="seat" type="button">A3</button>
+                            <button class="seat" type="button">A4</button>
+                            <button class="seat" type="button">A5</button>
+                            <button class="seat" type="button">A6</button>
+
+                        </div>
+
+
+                        <!-- Row B -->
+                        <div class="seat-row">
+
+                            <span>B</span>
+
+                            <button class="seat" type="button">B1</button>
+                            <button class="seat" type="button">B2</button>
+                            <button class="seat" type="button">B3</button>
+                            <button class="seat" type="button">B4</button>
+                            <button class="seat" type="button">B5</button>
+                            <button class="seat" type="button">B6</button>
+
+                        </div>
+
+
+                        <!-- Row C -->
+                        <div class="seat-row">
+
+                            <span>C</span>
+
+                            <button class="seat" type="button">C1</button>
+                            <button class="seat" type="button">C2</button>
+                            <button class="seat" type="button">C3</button>
+                            <button class="seat" type="button">C4</button>
+                            <button class="seat" type="button">C5</button>
+                            <button class="seat" type="button">C6</button>
+
+                        </div>
+
+
+                        <!-- Row D -->
+                        <div class="seat-row">
+
+                            <span>D</span>
+
+                            <button class="seat" type="button">D1</button>
+                            <button class="seat" type="button">D2</button>
+                            <button class="seat" type="button">D3</button>
+                            <button class="seat" type="button">D4</button>
+                            <button class="seat" type="button">D5</button>
+                            <button class="seat" type="button">D6</button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="seat-legend">
+                        <span><i class="seat-key available-key" aria-hidden="true"></i> Available</span>
+                        <span><i class="seat-key selected-key" aria-hidden="true"></i> Selected</span>
+                        <span><i class="seat-key booked-key" aria-hidden="true"></i> Booked</span>
+                    </div>
+                    <p id="seatAvailability" class="seat-availability" role="status"></p>
+                    <p id="bookingError" class="field-error" role="alert" tabindex="-1"></p>
+
+                </div>
+            </div>
+
+
+            <!-- Booking Summary -->
+            <aside class="booking-summary">
+
+                <h2>Booking Summary</h2>
+                <p>
+                    Selected Seats:
+                    <span id="selectedSeats">None</span>
+                </p>
+
+                <div class="booking-summary-actions">
+                    <div class="booking-summary-total" aria-live="polite">
+                        <span>Tickets: <strong id="ticketQuantity">0</strong></span>
+                        <strong class="booking-total"><span id="totalPrice">0</span> EGP</strong>
+                    </div>
+                    <button type="button" class="main-button" id="continueToCheckout">Continue to Checkout</button>
+                </div>
+
+
+            </aside>
+        </div>
+
+    </div>
+
+
+    <footer class="footer cinema-footer">
+        <div class="cinema-footer-inner">
+            <div class="footer-brand">
+                <a class="logo cinema-logo" href="index.html">Cine<span>Verse</span></a>
+                <p>Find movies, choose a showtime, and book your seats.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="movies.html">Movies</a>
+                <a href="showtimes.html">Showtimes</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-account">
+                <a href="account.html">My Account</a>
+                <a href="booking.html">Book Tickets</a>
+            </div>
+        </div>
+        <p class="cinema-copyright">© 2026 CineVerse. All rights reserved.</p>
+    </footer>
+
+    <script src="js/catalog.js?v=4"></script>
+    <script src="js/booking-records.js?v=8"></script>
+    <script src="js/screening-schedule.js"></script>
+    <script src="js/field-validation.js?v=3"></script>
+    <script src="js/booking.js?v=12" defer></script>
+
+</body>
+
+</html>
